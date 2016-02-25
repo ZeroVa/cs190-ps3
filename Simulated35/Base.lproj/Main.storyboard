@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Gaels View Controller-->
+        <scene sceneID="gkh-ut-raD">
+            <objects>
+                <viewController id="mgH-Iy-jle" customClass="GaelsViewController" customModule="Simulated35" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQY-wL-vKX"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rp-yL-AGy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4xh-MJ-fdP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gaels_logo_944_625" translatesAutoresizingMaskIntoConstraints="NO" id="aNN-gY-4zM">
+                                <rect key="frame" x="186.5" y="225" width="226" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aNN-gY-4zM" secondAttribute="height" multiplier="944:625" id="4Fx-Io-vGC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-3n-1Tf">
+                                <rect key="frame" x="279" y="570" width="42" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EL3-3n-1Tf" secondAttribute="height" multiplier="7:5" id="Apd-tn-LVZ"/>
+                                </constraints>
+                                <state key="normal" title="DONE"/>
+                                <connections>
+                                    <segue destination="qEp-mX-jzS" kind="unwind" unwindAction="unwindAcknowledgements:" id="YWG-Gh-FV1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aNN-gY-4zM" firstAttribute="height" secondItem="4xh-MJ-fdP" secondAttribute="height" multiplier="1:4" id="3Ah-gg-eSP"/>
+                            <constraint firstItem="aNN-gY-4zM" firstAttribute="centerX" secondItem="4xh-MJ-fdP" secondAttribute="centerX" id="7Ib-sU-Ldn"/>
+                            <constraint firstItem="aNN-gY-4zM" firstAttribute="height" secondItem="4xh-MJ-fdP" secondAttribute="height" multiplier="0.5" id="V2W-jY-Wge"/>
+                            <constraint firstItem="EL3-3n-1Tf" firstAttribute="centerX" secondItem="4xh-MJ-fdP" secondAttribute="centerX" id="n6P-m2-g1e"/>
+                            <constraint firstItem="aNN-gY-4zM" firstAttribute="centerY" secondItem="4xh-MJ-fdP" secondAttribute="centerY" id="qK8-7i-8bE"/>
+                            <constraint firstItem="3rp-yL-AGy" firstAttribute="top" secondItem="EL3-3n-1Tf" secondAttribute="bottom" id="yzo-Js-iHH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V2W-jY-Wge"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VwK-rk-ZMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="1390"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -22,16 +71,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-3Y-bB7" customClass="DisplayView" customModule="Simulated35" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="560" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzu-5P-b38">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="68"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="mgH-Iy-jle" kind="presentation" id="Z6u-ux-ojY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.10196078431372549" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ey4-3Y-bB7" secondAttribute="height" multiplier="165:20" id="01X-2i-mlH"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="centerX" secondItem="ey4-3Y-bB7" secondAttribute="centerX" id="0ff-G5-W14"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="centerY" secondItem="ey4-3Y-bB7" secondAttribute="centerY" id="ZhP-kZ-d0M"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="centerY" secondItem="ey4-3Y-bB7" secondAttribute="centerY" id="eHM-an-ntv"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="width" secondItem="ey4-3Y-bB7" secondAttribute="width" id="gs7-1t-2K4"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="centerX" secondItem="ey4-3Y-bB7" secondAttribute="centerX" id="ijK-oE-GEO"/>
+                                    <constraint firstItem="uzu-5P-b38" firstAttribute="height" secondItem="ey4-3Y-bB7" secondAttribute="height" id="qLd-ma-98R"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZhP-kZ-d0M"/>
+                                        <exclude reference="ijK-oE-GEO"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-j0-Y6h" userLabel="S b4 x^y">
-                                <rect key="frame" x="20" y="88" width="62" height="2"/>
+                                <rect key="frame" x="20" y="88" width="62" height="2.5"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-yp-eQ2">
-                                <rect key="frame" x="20" y="90" width="62" height="62"/>
+                                <rect key="frame" x="20" y="90.5" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zUv-yp-eQ2" secondAttribute="height" multiplier="1:1" id="Q8V-F6-u6P"/>
@@ -41,13 +113,13 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx7-Oc-S9Y" userLabel="S b4 x^1/2">
-                                <rect key="frame" x="20" y="152" width="62" height="2"/>
+                                <rect key="frame" x="20" y="152.5" width="62" height="1.5"/>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="110" width="40" height="1"/>
                                 </variation>
                             </view>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6C-jU-xXH">
-                                <rect key="frame" x="20" y="154" width="62" height="62"/>
+                                <rect key="frame" x="20" y="154" width="62" height="62.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="x^1/2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +129,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-JE-1kP">
-                                <rect key="frame" x="144" y="154" width="63" height="62"/>
+                                <rect key="frame" x="144.5" y="154" width="62" height="62.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="arc">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +139,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-5Y-cL9">
-                                <rect key="frame" x="269" y="154" width="62" height="62"/>
+                                <rect key="frame" x="269" y="154" width="62" height="62.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="sin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +149,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-U2-oed">
-                                <rect key="frame" x="393" y="154" width="63" height="62"/>
+                                <rect key="frame" x="393.5" y="154" width="62" height="62.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="cos">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,7 +159,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMY-nw-hkZ">
-                                <rect key="frame" x="518" y="154" width="62" height="62"/>
+                                <rect key="frame" x="518" y="154" width="62" height="62.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="tan">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +169,7 @@
                                 </variation>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We6-2B-7kp" userLabel="S b4 1/x">
-                                <rect key="frame" x="20" y="216" width="62" height="2"/>
+                                <rect key="frame" x="20" y="216.5" width="62" height="1.5"/>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="151" width="40" height="2"/>
                                 </variation>
@@ -110,7 +182,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K28-3T-Atw">
-                                <rect key="frame" x="144" y="218" width="63" height="62"/>
+                                <rect key="frame" x="144.5" y="218" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="x~y">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,7 +196,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaK-42-cd5">
-                                <rect key="frame" x="393" y="218" width="63" height="62"/>
+                                <rect key="frame" x="393.5" y="218" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="STO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,54 +210,54 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKa-Fw-NyB" userLabel="S b4 ENTER">
-                                <rect key="frame" x="20" y="280" width="62" height="2"/>
+                                <rect key="frame" x="20" y="280" width="62" height="1.5"/>
                             </view>
                             <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-fo-iG9">
-                                <rect key="frame" x="20" y="282" width="187" height="62"/>
+                                <rect key="frame" x="20" y="281.5" width="186.5" height="62.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ENTER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-rT-Bdn">
-                                <rect key="frame" x="269" y="282" width="62" height="62"/>
+                                <rect key="frame" x="269" y="281.5" width="62" height="62.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="CHS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-sh-eGT">
-                                <rect key="frame" x="393" y="282" width="63" height="62"/>
+                                <rect key="frame" x="393.5" y="281.5" width="62" height="62.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="EEX">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afO-WJ-56s">
-                                <rect key="frame" x="518" y="282" width="62" height="62"/>
+                                <rect key="frame" x="518" y="281.5" width="62" height="62.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="CL x">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Fk-eH-9fh" userLabel="S b4 -">
-                                <rect key="frame" x="20" y="344" width="62" height="2"/>
+                                <rect key="frame" x="20" y="344" width="62" height="1.5"/>
                             </view>
                             <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-UO-CLf">
-                                <rect key="frame" x="20" y="346" width="62" height="62"/>
+                                <rect key="frame" x="20" y="345.5" width="62" height="62.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="-">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRm-t9-lpn" userLabel="S b4 +">
-                                <rect key="frame" x="20" y="408" width="62" height="1"/>
+                                <rect key="frame" x="20" y="408" width="62" height="1.5"/>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="275" width="40" height="2"/>
                                 </variation>
                             </view>
                             <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmr-fq-tDf">
-                                <rect key="frame" x="20" y="409" width="62" height="63"/>
+                                <rect key="frame" x="20" y="409.5" width="62" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,20 +267,20 @@
                                 </variation>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pjr-Ku-R5b" userLabel="S b4 *">
-                                <rect key="frame" x="20" y="472" width="62" height="1"/>
+                                <rect key="frame" x="20" y="471.5" width="62" height="1.5"/>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="317" width="40" height="1"/>
                                 </variation>
                             </view>
                             <button opaque="NO" tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-dx-0Of" userLabel="*">
-                                <rect key="frame" x="20" y="473" width="62" height="62"/>
+                                <rect key="frame" x="20" y="473" width="62" height="62.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="*">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMO-ee-hKd" userLabel="S b4 /">
-                                <rect key="frame" x="20" y="535" width="62" height="2"/>
+                                <rect key="frame" x="20" y="535.5" width="62" height="1.5"/>
                             </view>
                             <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-A8-9Vd">
                                 <rect key="frame" x="20" y="537" width="62" height="62"/>
@@ -218,7 +290,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6h-Oq-hAw" userLabel="0">
-                                <rect key="frame" x="144" y="537" width="94" height="62"/>
+                                <rect key="frame" x="144.5" y="537" width="93.5" height="62"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,7 +300,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O60-6C-PEe" userLabel=".">
-                                <rect key="frame" x="316" y="537" width="93" height="62"/>
+                                <rect key="frame" x="316" y="537" width="93.5" height="62"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title=".">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -238,7 +310,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xp-uw-8sS">
-                                <rect key="frame" x="487" y="537" width="93" height="62"/>
+                                <rect key="frame" x="486.5" y="537" width="93.5" height="62"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="PI">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,40 +323,40 @@
                                 <rect key="frame" x="20" y="599" width="62" height="1"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJh-P6-6n6" userLabel="S b4 log">
-                                <rect key="frame" x="82" y="90" width="62" height="62"/>
+                                <rect key="frame" x="82" y="90.5" width="62.5" height="62"/>
                             </view>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Al-Km-bEY">
-                                <rect key="frame" x="144" y="90" width="63" height="62"/>
+                                <rect key="frame" x="144.5" y="90.5" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="log">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHP-nS-U9T" userLabel="S b4 ln">
-                                <rect key="frame" x="207" y="90" width="62" height="62"/>
+                                <rect key="frame" x="206.5" y="90.5" width="62.5" height="62"/>
                             </view>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSE-xf-ixL">
-                                <rect key="frame" x="269" y="90" width="62" height="62"/>
+                                <rect key="frame" x="269" y="90.5" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ln">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-nJ-OyZ" userLabel="S b4 e^x">
-                                <rect key="frame" x="331" y="90" width="62" height="62"/>
+                                <rect key="frame" x="331" y="90.5" width="62.5" height="62"/>
                             </view>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-gf-hnA">
-                                <rect key="frame" x="393" y="90" width="63" height="62"/>
+                                <rect key="frame" x="393.5" y="90.5" width="62" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="e^x">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-Os-tAd" userLabel="S b4 CLR">
-                                <rect key="frame" x="456" y="90" width="62" height="62"/>
+                                <rect key="frame" x="455.5" y="90.5" width="62.5" height="62"/>
                             </view>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyD-oW-0jW">
-                                <rect key="frame" x="518" y="90" width="62" height="62"/>
+                                <rect key="frame" x="518" y="90.5" width="62" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="CLR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -458,8 +530,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="qEp-mX-jzS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="635" y="676"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gaels_logo_944_625" width="472" height="312"/>
+    </resources>
 </document>
